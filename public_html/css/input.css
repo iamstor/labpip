@@ -1,0 +1,15 @@
+input {
+    margin: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.98);
+    border-radius: 3px;
+    background: rgba(83, 255, 9, 0) !important;
+    outline: none;
+    height: 24px; // высота на  усмотрение
+color: #cccccc; //цвет шрифта в обычном состоянии
+font-size: 11px; // Размер шрифта
+font-family: Tahoma; // Стиль шрифта
+}
+
+#R, #Y, #X{
+    width: 140px;
+}

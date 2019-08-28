@@ -1,0 +1,8 @@
+th, td{
+    border: 2px solid rgba(171, 67, 126, 0.98);
+    padding: 5px;
+}
+
+table.points{
+    border-collapse: collapse;
+}

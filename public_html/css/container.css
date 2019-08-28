@@ -1,0 +1,11 @@
+.container{
+    width: 700px;
+    background-color: rgba(140, 114, 102, 0.22);
+    font-size: 20px;
+    font-family: "Helvetica Neue";
+    color: rgb(76, 59, 75);
+}
+
+.header, .footer{
+    padding: 1em 0;
+}

@@ -1,0 +1,15 @@
+.task_image{
+
+    margin: 20px;
+}
+
+.task_text{
+    height: 217px;
+    margin: 20px 0px 20px 20px;
+}
+
+
+
+.task-container, .form-container{
+    text-align: left;
+}
