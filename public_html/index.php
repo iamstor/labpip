@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<!DOCTYPE html
+       >
 <?php
     session_start();
     //global vars
@@ -20,9 +21,11 @@
     <link rel="stylesheet" type="text/css" href="css/table.css">
     <link rel="stylesheet" type="text/css" href="css/task.css">
 
+
     <script type="text/javascript">
 
     var timeout;
+
 
     function validate(_form){
 
@@ -31,16 +34,28 @@
         var Y = _form.Y.value;
         var R = _form.R.value;
 
+
+        function isNumber(n) {
+            return /^-?[\d.]$/.test(n);
+        }
+
+
+        if (!isNumber(X)){
+            fail="Некорректно задано значение X (не является целым) \n"
+        }
+
         if (Y <= -3 || Y >= 3 || isNaN(Y) || Y == "" || Y.length > 10){
-          fail = "Некорректно задано значение Y \n";
+          fail = "Некорректно задано значение Y\n";
         }
         if (R <1 || R >4 || isNaN(R) || R == "" || R.length > 10){
           if (!fail) fail = "";
           fail += "Некорректно задано значение R \n";
         }
 
+
         if (fail){
-          alert(fail);
+         // alert(fail);
+         document.getElementById("q").innerHTML=fail;
           return false;
         }
         else{
@@ -91,7 +106,7 @@
 
       <div class="container form">
           <form class="form" action="checkPoints.php" method="get"
-            onsubmit="return validate(this);" target="result_frame">
+            onsubmit="return validate(this);">
 
               <table class="radio_btn">
                   <tr>
@@ -118,12 +133,14 @@
         <input class="input_Y" id="Y" type="text" name="Y" placeholder="(-3 .. 3)"><br>
 
         <label for="R"> R = </label>
-        <input class="input_R" id="R" type="text" name="R" placeholder="(1 .. 4)"><br>
+        <input class="input_R" id="R" type="text" name="R" placeholder="[1 .. 4]"><br>
 
         <input class="submit" type="submit" name="submit" value=" ПРОВЕРИТЬ ">
       </form>
+          <div id="q"> </div>
 
-      <canvas id="canvas" style="background-color:#ffffff; border-radius: 20px;"
+
+          <canvas id="canvas" style="background-color:#ffffff; border-radius: 20px;"
         width="300" height="300"></canvas>
       <script type="text/javascript">
           function createCanvas(id, x, y, r){
@@ -207,7 +224,7 @@
     </div>
 
 
-    <!--result_frame-->
+
     <div >
         <iframe name="result_frame" height="120" width="700" id="result_frame"
           allowtransparenc frameborder="no" scrolling="no" seamless style="display:none"></iframe>
